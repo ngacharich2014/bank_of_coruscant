@@ -1,1 +1,60 @@
-login
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="styles.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <style>
+    body,html {height: 100%; margin: 0; font-family: Arial, Helvetica, sans-serif}
+    
+        * {
+            box-sizing: border-box;
+        }
+            .bg-image {
+            background-image: url(coruscant.jpg);
+
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+
+            height: 100%;
+
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+
+        .bg-text {
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0, 0.4);
+            color: white;
+            font-weight: bold;
+            border: 3px solid #f1f1f1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-image"></div>
+    
+<div class="bg-text">
+     
+        <h2>Login Form</h2>
+        <form action="/action_page.php" method="post">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" value="Nick"><br>
+            <label for="pwd">Password:</label><br>
+            <input type="password" id="pwd" name="pwd" value="Boca5678"><br>
+            <input type="checkbox"><label for="remember me">Remember me</label><br><br>
+            <input type="submit" value="Submit">
+        </form>
+</div>
+    
+</body>
+</html>
