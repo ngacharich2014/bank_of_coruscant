@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="styles.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <style>
+    body,html {height: 100%; margin: 0; font-family: Arial, Helvetica, sans-serif}
+    
+        * {
+            box-sizing: border-box;
+        }
+            .bg-image {
+            background-image: url(coruscant.jpg);
+
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+
+            height: 100%;
+
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+
+        .bg-text {
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0, 0.4);
+            color: white;
+            font-weight: bold;
+            border: 3px solid #f1f1f1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-image"></div>
+    
+<div class="bg-text">
+     
+        <h2>SignUp Form</h2>
+        <form action="/action_page.php" method="post" onSubmit="return psw_validation(this)">
+            <label for="email">Enter your email:</label><br>
+            <input type="email" id="email" name="email" value="Gach56@hotmail.com"><br>
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" value="Nick"><br>
+            <label for="pwd">Password:</label><br>
+            <input type="password" placeholder="Enter Password" id="psw" name="psw" required><br>
+            <label for="psw-repeat">Repeat Password:</label><br>
+            <input type="password" placeholder="Repeat Password" id="psw_repeat" name="psw_repeat"  required>
+            <div class="registrationFormAlert" id="divCheckPasswordMatch">
+            </div>
+            <br>
+            <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom: 15px">Remember me
+            </label>    
+            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a></p>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+</div>
+    
+</body>
+<script>
+    function psw_validation(form){
+        psw = form.psw.value;
+        psw_repeat = form.psw_repeat.value;
+
+        // If password not entered
+        if(psw == '')
+            alert("Please enter Password");
+        
+        // If confirm password not entered
+        else if(psw_repeat == '')
+            alert("Please enter confirm password");
+        
+        // If Not same return False.
+        else if(psw != psw_repeat){
+            alert("\nPassword did not match: Please try again...")
+            return false;
+        }
+        
+        // If same return True.
+        else{
+            alert("Password Match: Welcome to Bank of Corscant!")
+            return true;
+        }
+    }
+    
+   
+</script>
+</html>
